@@ -2,13 +2,19 @@ jQuery(document).ready(function($) {
 
 	var $overlay = $('<div class="overlay"></div>');
 	var $image = $('<img>');
+	var $caption = $('<p> </p>');
 
+
+	//Add Image and appened to overlay.
 	$overlay.append($image);
 
+	//Add caption to overlay
+	$overlay.append($caption);
+
 	//Add overlay
-		$("body").append($overlay);
-		//Add Image.
-		//A Caption	
+	$("body").append($overlay);
+
+
 
 
 
@@ -28,12 +34,18 @@ jQuery(document).ready(function($) {
 		$overlay.show();
 
 		//Get childs alt attribute and add it to the caption.
+		var captionText = $(this).children('img').attr('alt');
+		$caption.text(captionText);
 	});
 
 
 
 	//When overlay is clicked
+	$overlay.click(function(event) {
 		//Hide the overlay
+		$(this).hide();
+	});
+
 
 
 

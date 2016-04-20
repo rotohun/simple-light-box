@@ -1,6 +1,10 @@
 jQuery(document).ready(function($) {
 
 	var $overlay = $('<div class="overlay"></div>');
+	var $image = $('<img>');
+
+	$overlay.append($image);
+
 	//Add overlay
 		$("body").append($overlay);
 		//Add Image.
@@ -16,9 +20,13 @@ jQuery(document).ready(function($) {
 		var href = $(this).attr('href');
 
 		console.log(href);
+
+		//Update the overlay with the image linked in the link.
+		$image.attr('src', href);
+
 		//Show overlay.
 		$overlay.show();
-		//Update the overlay with the image linked in the link.
+
 		//Get childs alt attribute and add it to the caption.
 	});
 
